@@ -1,0 +1,8 @@
+- Sur la carte : possibilité de centrer sur des coordonnées
+- Module de statistiques (graphiques ?)
+- Plusieurs tags par enregistrement
+- Possibilité de créer des tags
+- Plusieurs photos par enregistrement
+- Barre de recherche pour les enregistrements (sur le nom)
+- Avoir une notion de "compte" simplifié : voir qui a créé l'enregistrement / filtrer par créateur
+- Découlant du point précédant, avoir un systeme de notation pour chaque enregistrement par les utilisateurs

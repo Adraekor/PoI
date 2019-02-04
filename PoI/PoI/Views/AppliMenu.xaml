@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="EXPLOSION.Views.AppliMenu">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="20">
+
+                <Button Text="Accueil" Command="{Binding DelegateHomepage}" />
+                <Label Text="Application" />
+                <Button Text="Map" Command="{Binding DelegateMap}" />
+                <Button Text="Enregistrements" Command="{Binding DelegateRecord}" />
+                <Button Text="Nouveau" Command="{Binding DelegateNewPoI}" />
+                <Button Text="Bonus" Command="{Binding DelegateBonus}" />
+                
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
