@@ -5,7 +5,9 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label HorizontalTextAlignment="Center" Text="{ Binding ProjectTitle }" />
+        <Label HorizontalTextAlignment="Center" Text="{ Binding ProjectYear }" />
+        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{ Binding GroupName }" />
     </StackLayout>
 
 </ContentPage>

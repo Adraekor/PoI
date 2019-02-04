@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace EXPLOSION.Views
+namespace PoI.Views
 {
     public partial class AppliMenu : MasterDetailPage
     {

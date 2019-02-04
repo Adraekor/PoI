@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EXPLOSION.ViewModels
+namespace PoI.ViewModels
 {
 	public class AppliMenuViewModel : ViewModelBase
 	{

@@ -4,8 +4,6 @@ using PoI.ViewModels;
 using PoI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using EXPLOSION.Views;
-using EXPLOSION.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PoI
