@@ -5,26 +5,34 @@ namespace PoI.ViewModels
 {
     public class NouveauViewModel : ViewModelBase
     {
-        public DelegateCommand DelegateTap;
+        public DelegateCommand DelegateTap { get; private set; }
+        public int ClickTotal { get; private set; }
 
-        private string _tapped;
-        public string Tapped
+        private string labelContent;
+        public string LabelContent
         {
-            get { return _tapped; }
-            set { SetProperty(ref _tapped, value); }
+            get { return labelContent; }
+            set { SetProperty(ref labelContent, value); }
         }
 
         public NouveauViewModel(INavigationService navigationService)
-            :base(navigationService)
+            : base(navigationService)
         {
             Title = "Nouveau";
-            Tapped = "Untapped";
+            ClickTotal = 0;
             DelegateTap = new DelegateCommand(ChangeTappedValue);
+            LabelContent = "0 clicks";
         }
 
         void ChangeTappedValue()
         {
             NavigationService.NavigateAsync("NavigationPage/MainPage");
+        }
+
+        void OnImageButtonClicked()
+        {
+            ClickTotal += 1;
+            LabelContent = $"{ClickTotal} ImageButton click{(ClickTotal == 1 ? "" : "s")}";
         }
     }
 }

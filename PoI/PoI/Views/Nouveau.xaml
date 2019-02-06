@@ -5,12 +5,20 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.Nouveau">
 
-    <StackLayout>
-        <ImageButton Source="XamarinLogo.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand" />
-            
+    <StackLayout 
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand">
         
-        <Label Text="{ Binding Tapped }" />
+        <Image Source="../Assets/addImage.png"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"
+                      />
+        <!--Command="{ Binding DelegateTap }"-->
+        
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" 
+               Text="{ Binding LabelContent }"/>
     </StackLayout>
+
 </ContentPage>
