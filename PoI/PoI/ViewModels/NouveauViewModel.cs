@@ -8,11 +8,18 @@ namespace PoI.ViewModels
         public DelegateCommand DelegateTap { get; private set; }
         public int ClickTotal { get; private set; }
 
-        private string labelContent;
-        public string LabelContent
+        private string name;
+        public string Name
         {
-            get { return labelContent; }
-            set { SetProperty(ref labelContent, value); }
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
+
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set { SetProperty(ref description, value); }
         }
 
         public NouveauViewModel(INavigationService navigationService)
@@ -21,18 +28,11 @@ namespace PoI.ViewModels
             Title = "Nouveau";
             ClickTotal = 0;
             DelegateTap = new DelegateCommand(ChangeTappedValue);
-            LabelContent = "0 clicks";
         }
 
         void ChangeTappedValue()
         {
-            NavigationService.NavigateAsync("NavigationPage/MainPage");
-        }
-
-        void OnImageButtonClicked()
-        {
-            ClickTotal += 1;
-            LabelContent = $"{ClickTotal} ImageButton click{(ClickTotal == 1 ? "" : "s")}";
+            NavigationService.GoBackAsync();
         }
     }
 }

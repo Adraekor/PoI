@@ -5,20 +5,34 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.Nouveau">
 
-    <StackLayout 
-        HorizontalOptions="CenterAndExpand" 
-        VerticalOptions="CenterAndExpand">
+    <StackLayout HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand">
         
-        <Image Source="../Assets/addImage.png"
-                     HorizontalOptions="Center"
-                     VerticalOptions="CenterAndExpand"
-                      />
-        <!--Command="{ Binding DelegateTap }"-->
-        
-        <Label FontSize="Large"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" 
-               Text="{ Binding LabelContent }"/>
+        <ImageButton Source="sharp_3d_rotation_24.xml"
+                     HeightRequest="200"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Fill"
+                     Command="{ Binding DelegateTap }" />
+
+        <Entry FontSize="Medium"
+               Placeholder="Name" 
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Name }" />
+
+        <Editor FontSize="Medium"
+                HeightRequest="50"
+                Placeholder="Description" 
+                AutoSize="TextChanges"
+                HorizontalOptions="FillAndExpand"
+                Text="{ Binding Description }" />
+
+        <ImageButton Source="baseline_save_24.xml"
+                     HeightRequest="40"
+                     WidthRequest="40"
+                     HorizontalOptions="EndAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Margin="20" />
     </StackLayout>
 
 </ContentPage>
