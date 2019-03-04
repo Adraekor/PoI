@@ -1,12 +1,18 @@
-﻿using Prism.Commands;
+﻿using LiteDB;
+using PoI.Model;
+using PoI.Services;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace PoI.ViewModels
 {
     public class NouveauViewModel : ViewModelBase
     {
+        private IPoIService _PoIService;
+
         public DelegateCommand DelegateTap { get; private set; }
-        public int ClickTotal { get; private set; }
+
+        public DelegateCommand DelegateSave { get; private set; }
 
         private string name;
         public string Name
@@ -22,12 +28,26 @@ namespace PoI.ViewModels
             set { SetProperty(ref description, value); }
         }
 
-        public NouveauViewModel(INavigationService navigationService)
+        public NouveauViewModel(INavigationService navigationService, IPoIService PoIService)
             : base(navigationService)
         {
             Title = "Nouveau";
-            ClickTotal = 0;
             DelegateTap = new DelegateCommand(ChangeTappedValue);
+            DelegateSave = new DelegateCommand(SaveCurrentEntry);
+            _PoIService = PoIService;
+        }
+
+        void SaveCurrentEntry()
+        {
+            var newPoI = new PointOfInterest
+            {
+                Name = Name,
+                Description = Description
+            };
+
+            _PoIService.AddPoI(newPoI);
+
+            NavigationService.NavigateAsync("Enregistrements");
         }
 
         void ChangeTappedValue()

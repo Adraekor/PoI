@@ -4,5 +4,47 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.Enregistrements">
+
+    <StackLayout>
+        <ListView
+            x:Name="ListPoI"
+            ItemsSource="{Binding PoIs}"
+            HasUnevenRows="True"
+            SelectionMode="None">
+
+            <!--<ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding CommandPizzaDetails}"
+                                      EventArgsParameterPath="Item" />
+            </ListView.Behaviors>-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            BackgroundColor="Beige"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand">
+
+                            <Label
+                                Text="{Binding Name}"
+                                TextColor="Green"
+                                FontAttributes="Bold"
+                                FontSize="50"
+                                Margin="20,10,10,5"/>
+
+                            <Label
+                                Text="{Binding Description}"
+                                TextColor="Red"
+                                FontSize="30"
+                                VerticalOptions="Center"
+                                HorizontalOptions="EndAndExpand"
+                                HorizontalTextAlignment="End"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
   
 </ContentPage>

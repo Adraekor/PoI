@@ -4,6 +4,7 @@ using PoI.ViewModels;
 using PoI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PoI.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PoI
@@ -28,6 +29,8 @@ namespace PoI
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IPoIService, PoIService>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<AppliMenu, AppliMenuViewModel>();
