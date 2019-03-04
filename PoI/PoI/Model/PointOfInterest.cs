@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PoI.Model
 {
@@ -6,7 +7,7 @@ namespace PoI.Model
     {
         public PointOfInterest()
         {
-                
+
         }
 
         public int Id { get; set; }
@@ -18,5 +19,7 @@ namespace PoI.Model
         public string Image { get; set; }
 
         public string TagList { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

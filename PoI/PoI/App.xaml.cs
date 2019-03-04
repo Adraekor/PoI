@@ -39,6 +39,8 @@ namespace PoI
             containerRegistry.RegisterForNavigation<Nouveau, NouveauViewModel>();
             containerRegistry.RegisterForNavigation<Bonus, BonusViewModel>();
             containerRegistry.RegisterForNavigation<Nouveau, NouveauViewModel>();
+            containerRegistry.RegisterForNavigation<PoIDetail, PoIDetailViewModel>();
+            containerRegistry.RegisterForNavigation<PoIEdit, PoIEditViewModel>();
         }
     }
 }

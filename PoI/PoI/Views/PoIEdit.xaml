@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PoI.Views.PoIEdit">
+
+    <StackLayout HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand">
+
+        <Image Source="baseline_add_a_photo_24.xml"
+                     HeightRequest="200"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Fill"/>
+
+        <Entry FontSize="Medium"
+               Placeholder="Name" 
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Name }" />
+
+        <Editor FontSize="Medium"
+                HeightRequest="50"
+                Placeholder="Description" 
+                AutoSize="TextChanges"
+                HorizontalOptions="FillAndExpand"
+                Text="{ Binding Description }" />
+
+        <Entry FontSize="Medium"
+               Placeholder="Tag" 
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Tag }" />
+
+        <ImageButton Source="baseline_save_24.xml"
+                     HeightRequest="40"
+                     WidthRequest="40"
+                     HorizontalOptions="EndAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Margin="20" 
+                     Command="{ Binding DelegateSave }"/>
+    </StackLayout>
+
+</ContentPage>

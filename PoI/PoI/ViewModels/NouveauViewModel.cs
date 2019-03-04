@@ -1,8 +1,8 @@
-﻿using LiteDB;
-using PoI.Model;
+﻿using PoI.Model;
 using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using System;
 
 namespace PoI.ViewModels
 {
@@ -44,13 +44,16 @@ namespace PoI.ViewModels
             _PoIService = PoIService;
         }
 
+
+
         void SaveCurrentEntry()
         {
             var newPoI = new PointOfInterest
             {
                 Name = Name,
                 Description = Description,
-                TagList = Tag
+                TagList = Tag,
+                Date = DateTime.Now
             };
 
             _PoIService.AddPoI(newPoI);

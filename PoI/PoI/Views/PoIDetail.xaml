@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PoI.Views.PoIDetail">
+
+    <StackLayout HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand">
+
+        <ImageButton Source="baseline_add_a_photo_24.xml"
+                     HeightRequest="200"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Fill"
+                     Command="{ Binding DelegateTap }" />
+
+        <Label FontSize="Medium"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Name }" />
+
+        <Label FontSize="Medium"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                Text="{ Binding Description }" />
+
+        <Label FontSize="Medium"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Tag }" />
+
+        <ImageButton Source="baseline_delete_24.xml"
+                     HeightRequest="40"
+                     WidthRequest="40"
+                     HorizontalOptions="EndAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Margin="20" 
+                     Command="{ Binding DelegateDelete }"/>
+
+        <ImageButton Source="baseline_edit_24.xml"
+                     HeightRequest="40"
+                     WidthRequest="40"
+                     HorizontalOptions="EndAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Margin="20" 
+                     Command="{ Binding DelegateEdit }"/>
+    </StackLayout>
+
+</ContentPage>
