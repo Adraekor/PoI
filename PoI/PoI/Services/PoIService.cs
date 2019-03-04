@@ -28,5 +28,14 @@ namespace PoI.Services
                 return PoIs.FindAll().ToList();
             }
         }
+
+        public PointOfInterest GetPoi(int id)
+        {
+            using (var db = new LiteDatabase(AppConstante.dbPath))
+            {
+                var PoIs = db.GetCollection<PointOfInterest>("poi");
+                return PoIs.FindById(id);
+            }
+        }
     }
 }

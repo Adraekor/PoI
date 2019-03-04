@@ -1,5 +1,6 @@
 ﻿using PoI.Model;
 using PoI.Services;
+using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
 
@@ -8,6 +9,8 @@ namespace PoI.ViewModels
     public class EnregistrementsViewModel : ViewModelBase
 	{
         private IPoIService _PoIService;
+
+        public DelegateCommand<PointOfInterest> DelegateDetailPoI { get; private set; }
 
         private ObservableCollection<PointOfInterest> _PoIs;
         public ObservableCollection<PointOfInterest> PoIs
@@ -20,6 +23,7 @@ namespace PoI.ViewModels
             : base(navigationService)
         {
             _PoIService = PoIService;
+            DelegateDetailPoI = new DelegateCommand<PointOfInterest>(EnregistrementDetail);
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -27,6 +31,16 @@ namespace PoI.ViewModels
             base.OnNavigatedTo(parameters);
 
             PoIs = new ObservableCollection<PointOfInterest>(_PoIService.GetAllPoI());
+        }
+
+        private void EnregistrementDetail(PointOfInterest poi)
+        {
+            var param = new NavigationParameters
+            {
+                { "poi", poi }
+            };
+
+            NavigationService.NavigateAsync("PoIDetail", param);
         }
     }
 }

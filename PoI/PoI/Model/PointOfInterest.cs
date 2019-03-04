@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Xamarin.Forms.Maps;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PoI.Model
 {
@@ -7,7 +7,7 @@ namespace PoI.Model
     {
         public PointOfInterest()
         {
-                
+
         }
 
         public int Id { get; set; }
@@ -20,6 +20,6 @@ namespace PoI.Model
 
         public string TagList { get; set; }
 
-        public Position pos { get; set; }
+        public DateTime Date { get; set; }
     }
 }
