@@ -14,6 +14,13 @@ namespace PoI.ViewModels
 
         public DelegateCommand DelegateSave { get; private set; }
 
+        private string _tag;
+        public string Tag
+        {
+            get { return _tag; }
+            set { SetProperty(ref _tag, value); }
+        }
+
         private string name;
         public string Name
         {
@@ -42,7 +49,8 @@ namespace PoI.ViewModels
             var newPoI = new PointOfInterest
             {
                 Name = Name,
-                Description = Description
+                Description = Description,
+                TagList = Tag
             };
 
             _PoIService.AddPoI(newPoI);

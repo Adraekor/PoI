@@ -26,6 +26,12 @@
                 AutoSize="TextChanges"
                 HorizontalOptions="FillAndExpand"
                 Text="{ Binding Description }" />
+        
+        <Entry FontSize="Medium"
+               Placeholder="Tag" 
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding Tag }" />
 
         <ImageButton Source="baseline_save_24.xml"
                      HeightRequest="40"
@@ -35,5 +41,4 @@
                      Margin="20" 
                      Command="{ Binding DelegateSave }"/>
     </StackLayout>
-
 </ContentPage>

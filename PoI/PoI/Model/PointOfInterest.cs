@@ -17,6 +17,6 @@ namespace PoI.Model
 
         public string Image { get; set; }
 
-        public List<string> TagList { get; set; }
+        public string TagList { get; set; }
     }
 }
