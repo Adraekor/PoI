@@ -25,6 +25,7 @@ namespace PoI.ViewModels
                 Position = position1,
                 Label = "MEILLEUR FAC DE LA GALAXY",
                 Address = "www.google.fr",
+                
             };
 
 
