@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Xamarin.Forms.Maps;
 
 namespace PoI.Model
 {
@@ -18,5 +19,7 @@ namespace PoI.Model
         public string Image { get; set; }
 
         public string TagList { get; set; }
+
+        public Position pos { get; set; }
     }
 }
