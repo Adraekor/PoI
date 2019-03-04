@@ -6,6 +6,6 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.MyMap">
     <maps:Map MapType="Street" />
-    <local:MyMap MapType="Street" MapPosition="{Binding MyPosition}" MapPins="{Binding PinCollection}" />
-  
+
 </ContentPage>
+    
