@@ -34,7 +34,7 @@ namespace PoI
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<AppliMenu, AppliMenuViewModel>();
-            containerRegistry.RegisterForNavigation<Map, MapViewModel>();
+            containerRegistry.RegisterForNavigation<MyMap, MyMapViewModel>();
             containerRegistry.RegisterForNavigation<Enregistrements, EnregistrementsViewModel>();
             containerRegistry.RegisterForNavigation<Nouveau, NouveauViewModel>();
             containerRegistry.RegisterForNavigation<Bonus, BonusViewModel>();
