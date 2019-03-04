@@ -32,7 +32,7 @@ namespace PoI.ViewModels
 
         private void NavToMap()
         {
-            NavigationService.NavigateAsync("NavigationPage/Map");
+            NavigationService.NavigateAsync("NavigationPage/MyMap");
         }
 
         private void NavToRecord()
