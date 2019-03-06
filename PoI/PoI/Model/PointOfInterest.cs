@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms.Maps;
 
 namespace PoI.Model
 {
@@ -21,5 +22,7 @@ namespace PoI.Model
         public string TagList { get; set; }
 
         public DateTime Date { get; set; }
+
+        public  Position pos { get; set; }
     }
 }
