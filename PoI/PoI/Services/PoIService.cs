@@ -20,6 +20,18 @@ namespace PoI.Services
             }
         }
 
+        public void DeletePoi(int id)
+        {
+            using (var db = new LiteDatabase(AppConstante.dbPath))
+            {
+                var PoIs = db.GetCollection<PointOfInterest>("poi");
+                if (PoIs.Exists(Query.EQ("_id", id)))
+                {
+                    PoIs.Delete(id);
+                }
+            }
+        }
+
         public List<PointOfInterest> GetAllPoI()
         {
             using (var db = new LiteDatabase(AppConstante.dbPath))

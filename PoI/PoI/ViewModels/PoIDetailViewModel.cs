@@ -1,6 +1,8 @@
 ﻿using PoI.Model;
+using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services;
 
 namespace PoI.ViewModels
 {
@@ -8,7 +10,12 @@ namespace PoI.ViewModels
 	{
         public DelegateCommand DelegateEdit { get; private set; }
 
+        public DelegateCommand DelegateDelete { get; private set; }
+
         private PointOfInterest PoI;
+
+        private IPageDialogService _dialogService;
+        private IPoIService _poiService;
 
         private string _name;
         public string Name
@@ -31,29 +38,40 @@ namespace PoI.ViewModels
             set { SetProperty(ref _tag, value); }
         }
 
-        public PoIDetailViewModel(INavigationService navigationService)
+        public PoIDetailViewModel(INavigationService navigationService, IPageDialogService dialogService, IPoIService poiService)
             :base(navigationService)
         {
             Title = "Détails PoI";
+
+            _dialogService = dialogService;
+            _poiService = poiService;
+
             DelegateEdit = new DelegateCommand(EditPoI);
+            DelegateDelete = new DelegateCommand(DeletePoI);
+
         }
 
-        private void EditPoI()
+        private async void DeletePoI()
         {
-            var poi = new PointOfInterest()
-            {
-                Id = PoI.Id,
-                Name = Name,
-                Description = Description,
-                TagList = Tag,
-            };
+            var answer = await _dialogService.DisplayAlertAsync("Suppression", "Êtes vous sûr de vouloir supprimer ce PoI", "Non", "Oui");
 
+            if(!answer)
+            {
+                _poiService.DeletePoi(PoI.Id);
+                await NavigationService.GoBackAsync();
+            }
+        }
+
+        private async void EditPoI()
+        {
             var param = new NavigationParameters()
             {
-                { "poi", poi }
+                { "poi", PoI }
             };
 
-            NavigationService.NavigateAsync("PoIEdit", param);
+            await NavigationService.NavigateAsync("PoIEdit", param);
+
+           
         }
 
         public override void OnNavigatingTo(INavigationParameters parameters)

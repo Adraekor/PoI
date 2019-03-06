@@ -2,6 +2,7 @@
 using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 
 namespace PoI.ViewModels
@@ -9,6 +10,7 @@ namespace PoI.ViewModels
     public class NouveauViewModel : ViewModelBase
     {
         private IPoIService _PoIService;
+        private IPageDialogService _dialogService;
 
         public DelegateCommand DelegateTap { get; private set; }
 
@@ -35,30 +37,38 @@ namespace PoI.ViewModels
             set { SetProperty(ref description, value); }
         }
 
-        public NouveauViewModel(INavigationService navigationService, IPoIService PoIService)
+        public NouveauViewModel(INavigationService navigationService, IPoIService PoIService, IPageDialogService dialogService)
             : base(navigationService)
         {
             Title = "Nouveau";
+
+            _PoIService = PoIService;
+            _dialogService = dialogService;
+
             DelegateTap = new DelegateCommand(ChangeTappedValue);
             DelegateSave = new DelegateCommand(SaveCurrentEntry);
-            _PoIService = PoIService;
         }
 
 
 
-        void SaveCurrentEntry()
+        private async void SaveCurrentEntry()
         {
-            var newPoI = new PointOfInterest
+            var answer = await _dialogService.DisplayAlertAsync("Création", "Êtes vous sûr de vouloir créer ce PoI", "Non", "Oui");
+
+            if (!answer)
             {
-                Name = Name,
-                Description = Description,
-                TagList = Tag,
-                Date = DateTime.Now
-            };
+                var newPoI = new PointOfInterest
+                {
+                    Name = Name,
+                    Description = Description,
+                    TagList = Tag,
+                    Date = DateTime.Now
+                };
 
-            _PoIService.AddPoI(newPoI);
+                 _PoIService.AddPoI(newPoI);
+                 await NavigationService.NavigateAsync("Enregistrements");
+            }
 
-            NavigationService.NavigateAsync("Enregistrements");
         }
 
         void ChangeTappedValue()
