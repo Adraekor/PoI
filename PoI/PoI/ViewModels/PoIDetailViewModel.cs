@@ -48,7 +48,6 @@ namespace PoI.ViewModels
 
             DelegateEdit = new DelegateCommand(EditPoI);
             DelegateDelete = new DelegateCommand(DeletePoI);
-
         }
 
         private async void DeletePoI()
@@ -70,8 +69,6 @@ namespace PoI.ViewModels
             };
 
             await NavigationService.NavigateAsync("PoIEdit", param);
-
-           
         }
 
         public override void OnNavigatingTo(INavigationParameters parameters)
