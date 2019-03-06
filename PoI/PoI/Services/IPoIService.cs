@@ -8,6 +8,11 @@ namespace PoI.Services
     public interface IPoIService
     {
         List<PointOfInterest> GetAllPoI();
+
         void AddPoI(PointOfInterest poi);
+
+        PointOfInterest GetPoi(int id);
+
+        void DeletePoi(int id);
     }
 }

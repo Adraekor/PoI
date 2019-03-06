@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoI", "PoI\PoI\PoI.csproj", "{F197DEE0-16DB-4E02-9990-695604E3257C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoI", "PoI\PoI\PoI.csproj", "{F197DEE0-16DB-4E02-9990-695604E3257C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoI.Android", "PoI\PoI.Android\PoI.Android.csproj", "{757F629E-471A-4CDD-AE85-5763F4A4D96D}"
 EndProject
