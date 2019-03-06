@@ -20,7 +20,6 @@
                Text="{ Binding Name }" />
 
         <Label FontSize="Medium"
-                HeightRequest="50"
                 HorizontalOptions="FillAndExpand"
                 Text="{ Binding Description }" />
 

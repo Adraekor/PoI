@@ -3,7 +3,6 @@ using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
-using System.Diagnostics;
 
 namespace PoI.ViewModels
 {
@@ -54,7 +53,7 @@ namespace PoI.ViewModels
 
         private async void DeletePoI()
         {
-            var answer = await _dialogService.DisplayAlertAsync("Confirmation", "Êtes vous sûr de vouloir supprimer ce PoI", "Non", "Oui");
+            var answer = await _dialogService.DisplayAlertAsync("Suppression", "Êtes vous sûr de vouloir supprimer ce PoI", "Non", "Oui");
 
             if(!answer)
             {
@@ -63,14 +62,16 @@ namespace PoI.ViewModels
             }
         }
 
-        private void EditPoI()
+        private async void EditPoI()
         {
             var param = new NavigationParameters()
             {
                 { "poi", PoI }
             };
 
-            NavigationService.NavigateAsync("PoIEdit", param);
+            await NavigationService.NavigateAsync("PoIEdit", param);
+
+           
         }
 
         public override void OnNavigatingTo(INavigationParameters parameters)
