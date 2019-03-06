@@ -1,21 +1,23 @@
-﻿using Xamarin.Forms;
+﻿using Plugin.Geolocator;
+using PoI.ViewModels;
+using System;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using PoI.Services;
 
 namespace PoI.Views
 {
     public partial class MyMap : ContentPage
     {
+        static Position current = new Position(49.094928, 16.229883);
         public MyMap()
         {
             InitializeComponent();
-           var map = new Map(MapSpan.FromCenterAndRadius(
-new Position(49.094928, 6.229883),
-Distance.FromMiles(0.5)))
-            {
-                IsShowingUser = true,
-                VerticalOptions = LayoutOptions.FillAndExpand
-            };
-
+            BindingContext = new MyMapViewModel();
+            var map = MyMapViewModel.map; 
+            Content = map;
+            /*
             var position1 = new Position(49.094928, 6.229883);
 
             var pin1 = new Pin
@@ -28,9 +30,10 @@ Distance.FromMiles(0.5)))
 
 
 
-            map.Pins.Add(pin1);
+            map2.Pins.Add(pin1);  */
 
-            Content = map;                     
+              
         }
     }
 }
+

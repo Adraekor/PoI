@@ -3,6 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>my_device</SelectedDevice>
     <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
-    <DefaultDevice>my_device</DefaultDevice>
+    <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
   </PropertyGroup>
 </Project>

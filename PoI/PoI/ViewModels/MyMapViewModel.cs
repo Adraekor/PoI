@@ -9,13 +9,30 @@ using System.Collections.ObjectModel;
 
 namespace PoI.ViewModels
 {
-	public class MyMapViewModel : BindableBase
-	{
-        private ObservableCollection<Pin> _pinCollection = new ObservableCollection<Pin>();
-        public ObservableCollection<Pin> PinCollection { get { return _pinCollection; } set { _pinCollection = value; OnPropertyChanged(); } }
     
+    public class MyMapViewModel : BindableBase
+	{
+      public static Map map = new Map(MapSpan.FromCenterAndRadius(new Position(49.094928, 6.229883), Distance.FromMiles(0.5))){IsShowingUser = true,VerticalOptions = LayoutOptions.FillAndExpand};
+
         public MyMapViewModel()
         {
-            }
+
+            var position1 = new Position(49.094928, 6.229883);
+
+            var pin1 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position1,
+                Label = "MEILLEUR FAC DE LA GALAXY",
+                Address = "www.google.fr",
+                
+            };
+
+
+
+            map.Pins.Add(pin1); 
+        }
+
+
 	}
 }
