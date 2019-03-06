@@ -52,11 +52,12 @@ namespace PoI.ViewModels
             if (!answer)
             {
                 PoI.Name = Name;
-                PoI.MiniName = Name.Substring(0, 5) + "...";
+                PoI.MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name;
                 PoI.Description = Description;
-                PoI.MiniDesc = Description.Substring(0, 10) + "...";
+                if(string.IsNullOrEmpty(Description))
+                    PoI.MiniDesc = Description.Length > 10 ? Description.Substring(0, 10) + "..." : Description;
                 PoI.Tag = Tag;
-                PoI.MiniTag = Tag.Substring(0, 5) + "...";
+                PoI.MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag;
 
                 var param = new NavigationParameters()
                 {

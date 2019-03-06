@@ -69,13 +69,17 @@ namespace PoI.ViewModels
                 var newPoI = new PointOfInterest
                 {
                     Name = Name,
-                    MiniName = Name.Substring(0, 5) + "...",
+                    MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name,
                     Description = Description,
-                    MiniDesc = Description.Substring(0, 10) + "...",
                     Tag = Tag,
-                    MiniTag = Tag.Substring(0, 5) + "...",
+                    MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag,
                     Date = DateTime.Now
                 };
+
+                if (!string.IsNullOrEmpty(Description) && Description.Length > 10)
+                    newPoI.MiniDesc = Description.Substring(0, 10) + "...";
+                else
+                    newPoI.MiniDesc = Description;
 
                  _PoIService.AddPoI(newPoI);
                  await NavigationService.NavigateAsync("/AppliMenu/NavigationPage/Enregistrements");
