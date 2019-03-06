@@ -15,11 +15,17 @@ namespace PoI.Model
 
         public string Name { get; set; }
 
+        public string MiniName { get; set; }
+
         public string Description { get; set; }
+
+        public string MiniDesc { get; set; }
 
         public string Image { get; set; }
 
-        public string TagList { get; set; }
+        public string Tag { get; set; }
+
+        public string MiniTag { get; set; }
 
         public DateTime Date { get; set; }
 

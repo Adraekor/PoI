@@ -1,4 +1,5 @@
-﻿using PoI.Model;
+﻿using LiteDB;
+using PoI.Model;
 using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;

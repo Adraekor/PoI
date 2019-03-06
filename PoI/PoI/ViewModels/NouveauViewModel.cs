@@ -69,8 +69,11 @@ namespace PoI.ViewModels
                 var newPoI = new PointOfInterest
                 {
                     Name = Name,
+                    MiniName = Name.Substring(0, 5) + "...",
                     Description = Description,
-                    TagList = Tag,
+                    MiniDesc = Description.Substring(0, 10) + "...",
+                    Tag = Tag,
+                    MiniTag = Tag.Substring(0, 5) + "...",
                     Date = DateTime.Now
                 };
 

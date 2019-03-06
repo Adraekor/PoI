@@ -28,20 +28,20 @@
                             VerticalOptions="FillAndExpand">
 
                             <Label
-                                Text="{Binding Name}"
+                                Text="{Binding MiniName}"
                                 TextColor="Green"
                                 FontAttributes="Bold"
                                 FontSize="50"
                                 Margin="20,10,10,5"/>
                             
                             <Label
-                                Text="{ Binding TagList }"
+                                Text="{ Binding MiniTag }"
                                 FontAttributes="Bold"
                                 FontSize="30"
                                 Margin="20,10,10,5"/>
 
                             <Label
-                                Text="{Binding Description}"
+                                Text="{Binding MiniDesc}"
                                 TextColor="Red"
                                 FontSize="30"
                                 VerticalOptions="Center"

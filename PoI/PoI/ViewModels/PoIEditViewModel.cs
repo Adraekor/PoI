@@ -4,6 +4,7 @@ using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using System;
 
 namespace PoI.ViewModels
 {
@@ -51,8 +52,11 @@ namespace PoI.ViewModels
             if (!answer)
             {
                 PoI.Name = Name;
-                PoI.TagList = Tag;
+                PoI.MiniName = Name.Substring(0, 5) + "...";
                 PoI.Description = Description;
+                PoI.MiniDesc = Description.Substring(0, 10) + "...";
+                PoI.Tag = Tag;
+                PoI.MiniTag = Tag.Substring(0, 5) + "...";
 
                 var param = new NavigationParameters()
                 {
@@ -88,7 +92,7 @@ namespace PoI.ViewModels
             PoI = poi;
             Name = poi.Name;
             Description = poi.Description;
-            Tag = poi.TagList;
+            Tag = poi.Tag;
         }
     }
 }

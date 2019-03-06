@@ -79,7 +79,7 @@ namespace PoI.ViewModels
             PoI = poi;
             Name = poi.Name;
             Description = poi.Description;
-            Tag = poi.TagList;
+            Tag = poi.Tag;
         }
     }
 }
