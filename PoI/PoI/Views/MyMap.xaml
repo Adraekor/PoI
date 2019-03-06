@@ -5,8 +5,8 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.MyMap">
-    <maps:Map MapType="Street" />
-    
-
+    <ContentPage.Content>
+        <ContentView Content="{Binding Map}"></ContentView>
+    </ContentPage.Content>
 </ContentPage>
     
