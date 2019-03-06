@@ -41,7 +41,7 @@ namespace PoI.ViewModels
         {
             PoIService = poiService;
             _dialogService = pageDialog;
-            DelegateSave = new DelegateCommand(UpdateAndExit);
+            DelegateSave = new DelegateCommand(UpdateAndExit, CanEditPoI).ObservesProperty(() => Name).ObservesProperty(() => Tag);
         }
 
         public async void UpdateAndExit()
@@ -67,6 +67,17 @@ namespace PoI.ViewModels
 
                 await NavigationService.GoBackAsync(param);
             }
+        }
+
+        private bool CanEditPoI()
+        {
+            if (string.IsNullOrEmpty(Name))
+                return false;
+
+            if (string.IsNullOrEmpty(Tag))
+                return false;
+
+            return true;
         }
 
         public override void OnNavigatingTo(INavigationParameters parameters)

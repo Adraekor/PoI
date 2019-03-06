@@ -46,10 +46,19 @@ namespace PoI.ViewModels
             _dialogService = dialogService;
 
             DelegateTap = new DelegateCommand(ChangeTappedValue);
-            DelegateSave = new DelegateCommand(SaveCurrentEntry);
+            DelegateSave = new DelegateCommand(SaveCurrentEntry, CanAddPoI).ObservesProperty(() => Name).ObservesProperty(() => Tag);
         }
 
+        private bool CanAddPoI()
+        {
+            if (string.IsNullOrEmpty(Name))
+                return false;
 
+            if (string.IsNullOrEmpty(Tag))
+                return false;
+
+            return true;
+        }
 
         private async void SaveCurrentEntry()
         {
@@ -66,9 +75,8 @@ namespace PoI.ViewModels
                 };
 
                  _PoIService.AddPoI(newPoI);
-                 await NavigationService.NavigateAsync("Enregistrements");
+                 await NavigationService.NavigateAsync("/AppliMenu/NavigationPage/Enregistrements");
             }
-
         }
 
         void ChangeTappedValue()
