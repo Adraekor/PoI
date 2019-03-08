@@ -49,7 +49,7 @@ namespace PoI.ViewModels
                         Type = PinType.Place,
                         Position = new Position(liste[i].latitude, liste[i].longitude),
                         Label = liste[i].Name,
-                        Address = liste[i].adresse,
+                        Address = "#" + liste[i].Tag,
                         BindingContext = liste[i],
                     };
 
