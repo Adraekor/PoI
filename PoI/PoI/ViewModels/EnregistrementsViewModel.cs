@@ -1,10 +1,8 @@
-﻿using LiteDB;
-using PoI.Model;
+﻿using PoI.Model;
 using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 
 namespace PoI.ViewModels
@@ -24,8 +22,6 @@ namespace PoI.ViewModels
 
         public DelegateCommand DelegateSearch { get; private set; }
 
-        public DelegateCommand DelegateCancel { get; private set; }
-
         public DelegateCommand DelegateReverse { get; private set; }
 
         private ObservableCollection<PointOfInterest> _PoIs;
@@ -44,24 +40,17 @@ namespace PoI.ViewModels
             DelegateDetailPoI = new DelegateCommand<PointOfInterest>(EnregistrementDetail);
             DelegateReverse = new DelegateCommand(ReverseEntries);
             DelegateSearch = new DelegateCommand(Research);
-            DelegateCancel = new DelegateCommand(Cancel);
-        }
-
-        private void Cancel()
-        {
-            PoIs = BasePoIs;
-            Search = string.Empty;
         }
 
         private void Research()
         {
-            if(string.IsNullOrEmpty(Search))
+            if(string.IsNullOrEmpty(Search) || string.IsNullOrWhiteSpace(Search))
             {
                 PoIs = BasePoIs;
             }
             else
             {
-                PoIs = new ObservableCollection<PointOfInterest>(BasePoIs.Where(poi => poi.Tag.Contains(Search)));
+                PoIs = new ObservableCollection<PointOfInterest>(BasePoIs.Where(poi => poi.Tag.Contains(Search) || poi.Name.Contains(Search)));
             }
         }
 

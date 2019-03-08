@@ -71,8 +71,7 @@ namespace PoI.ViewModels
                 PoI.Name = Name;
                 PoI.MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name;
                 PoI.Description = Description;
-                if(string.IsNullOrEmpty(Description))
-                    PoI.MiniDesc = Description.Length > 10 ? Description.Substring(0, 10) + "..." : Description;
+                PoI.MiniDesc = Description.Length > 10 ? Description.Substring(0, 10) + "..." : Description;
                 PoI.Tag = Tag;
                 PoI.MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag;
 

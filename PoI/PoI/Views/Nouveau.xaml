@@ -8,11 +8,12 @@
     <StackLayout HorizontalOptions="FillAndExpand" 
                  VerticalOptions="FillAndExpand">
 
-        <ImageButton Source="{ Binding ImageFilePath }"
-                     HeightRequest="200"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Fill"
-                     Command="{ Binding DelegateTap }" />
+        <ImageButton
+            Source="{ Binding ImageFilePath }"
+            HeightRequest="200"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Command="{ Binding DelegateTap }" />
 
         <Entry FontSize="Medium"
                Placeholder="Name" 
@@ -34,10 +35,10 @@
                Text="{ Binding Tag }" />
 
         <ImageButton Source="baseline_save_24.xml"
-                     HeightRequest="40"
-                     WidthRequest="40"
-                     HorizontalOptions="EndAndExpand"
-                     VerticalOptions="EndAndExpand"
+                     HeightRequest="50"
+                     WidthRequest="100"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="StartAndExpand"
                      Margin="20" 
                      Command="{ Binding DelegateSave }"/>
     </StackLayout>

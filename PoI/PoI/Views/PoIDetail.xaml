@@ -8,15 +8,15 @@
     <StackLayout HorizontalOptions="FillAndExpand" 
                  VerticalOptions="FillAndExpand">
 
-        <StackLayout>
+        <StackLayout
+            HorizontalOptions="CenterAndExpand">
             <Image Source="{ Binding ImageFilePath }"
-                         HeightRequest="200"
+                         HeightRequest="250"
                          HorizontalOptions="FillAndExpand"
-                         VerticalOptions="Fill"/>
+                         VerticalOptions="FillAndExpand"/>
             <Label Text="{Binding Date}"
-                       HorizontalTextAlignment="Center"
-                   FontSize="Large">
-            </Label>
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large" />
         </StackLayout>
 
         <Label FontSize="Medium"
@@ -35,22 +35,20 @@
 
         <StackLayout
             Orientation="Horizontal"
-            HorizontalOptions="EndAndExpand">
+            HorizontalOptions="CenterAndExpand">
             
             <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                 <ImageButton Source="baseline_delete_24.xml"
                              HeightRequest="50"
-                             WidthRequest="50"
+                             WidthRequest="100"
                              HorizontalOptions="End"
                              Command="{ Binding DelegateDelete }"/>
-
-
             </StackLayout>
             
             <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                 <ImageButton Source="baseline_edit_24.xml"
                              HeightRequest="50"
-                             WidthRequest="50"
+                             WidthRequest="100"
                              HorizontalOptions="End"
                              Command="{ Binding DelegateEdit }"/>
             </StackLayout>

@@ -10,23 +10,20 @@
         <StackLayout
             Orientation="Horizontal"
             VerticalOptions="FillAndExpand">
-            <Entry 
+
+            <SearchBar
                 Text="{ Binding Search }"
+                Placeholder="Recherche"
                 HeightRequest="50"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"/>
-
-            <Button
-                Command="{Binding DelegateSearch}"
-                HeightRequest="50"
-                WidthRequest="100"
-                Image="baseline_search_24.xml"/>
-
-            <Button
-                Command="{Binding DelegateCancel}"
-                HeightRequest="50"
-                WidthRequest="100"
-                Image="baseline_cancel_24.xml"/>
+                VerticalOptions="FillAndExpand">
+                <SearchBar.Behaviors>
+                    <b:EventToCommandBehavior
+                        EventName="TextChanged"
+                        Command="{Binding DelegateSearch}"
+                    />
+                </SearchBar.Behaviors>
+            </SearchBar>
 
             <ImageButton
                 Command="{Binding DelegateReverse}" 
@@ -61,22 +58,30 @@
                             <Image 
                                 Source="{Binding Image}" 
                                 VerticalOptions="FillAndExpand"
-                                HorizontalOptions="FillAndExpand"/>
+                                HorizontalOptions="FillAndExpand"
+                                WidthRequest="100"
+                                ScaleX="0.5"
+                                ScaleY="0.5"/>
 
-                            <Label
-                                Text="{Binding MiniName}"
-                                TextColor="Green"
-                                VerticalTextAlignment="Center"
-                                WidthRequest="75"
-                                FontAttributes="Bold"
-                                FontSize="20"/>
-                            
-                            <Label
-                                Text="{ Binding MiniTag }"
-                                FontAttributes="Bold"
-                                WidthRequest="75"
-                                VerticalTextAlignment="Center"
-                                FontSize="15"/>
+                            <StackLayout
+                                Orientation="Vertical"
+                                VerticalOptions="FillAndExpand">
+                                
+                                <Label
+                                    Text="{Binding MiniName}"
+                                    TextColor="Green"
+                                    VerticalTextAlignment="Start"
+                                    HorizontalTextAlignment="Start"
+                                    FontAttributes="Bold"
+                                    FontSize="20"/>
+
+                                <Label
+                                    Text="{ Binding MiniTag }"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="End"
+                                    HorizontalTextAlignment="Start"
+                                    FontSize="15"/>
+                            </StackLayout>
 
                             <Label
                                 Text="{Binding MiniDesc}"

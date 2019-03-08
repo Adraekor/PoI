@@ -1,20 +1,12 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xamarin.Forms.Maps;
-using Xamarin.Forms;
-using System.Collections.ObjectModel;
-using Plugin.Geolocator;
-using System.Threading.Tasks;
-using System.Diagnostics;
+﻿using Plugin.Geolocator;
 using PoI.Services;
 using Prism.Navigation;
+using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace PoI.ViewModels
 {
-    
     public class MyMapViewModel : ViewModelBase
 	{
         private IPoIService poiservice;
@@ -31,10 +23,8 @@ namespace PoI.ViewModels
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-
             CallingGPS();          
         }
-
 
         async void CallingGPS()
         {
@@ -42,11 +32,9 @@ namespace PoI.ViewModels
             Position position;
             locator.DesiredAccuracy = 120;
             
-            if (!CrossGeolocator.IsSupported)
-                position = new Position();
-            if (!CrossGeolocator.Current.IsGeolocationEnabled)
-                position = new Position();
-            if (!CrossGeolocator.Current.IsGeolocationAvailable)
+            if (!CrossGeolocator.IsSupported 
+             || !CrossGeolocator.Current.IsGeolocationEnabled  
+             || !CrossGeolocator.Current.IsGeolocationAvailable)
                 position = new Position();
 
             try
@@ -72,7 +60,7 @@ namespace PoI.ViewModels
                         Type = PinType.Place,
                         Position = new Position(liste[i].latitude, liste[i].longitude),
                         Label = liste[i].Name,
-                        Address = liste[i].Description,
+                        Address = "#" + liste[i].Tag,
                         BindingContext = liste[i],
                     };
 
