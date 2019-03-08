@@ -36,6 +36,7 @@ namespace PoI.Services
         {
             using (var db = new LiteDatabase(AppConstante.dbPath))
             {
+                //db.DropCollection("poi");              
                 var PoIs = db.GetCollection<PointOfInterest>("poi");
                 return PoIs.FindAll().ToList();
             }

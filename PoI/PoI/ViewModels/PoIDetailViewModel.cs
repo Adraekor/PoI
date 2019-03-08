@@ -9,6 +9,8 @@ namespace PoI.ViewModels
 {
     public class PoIDetailViewModel : ViewModelBase
 	{
+        private string source { get; set; }
+
         public DelegateCommand DelegateEdit { get; private set; }
 
         public DelegateCommand DelegateDelete { get; private set; }
@@ -72,7 +74,10 @@ namespace PoI.ViewModels
             if(answer)
             {
                 _poiService.DeletePoi(PoI.Id);
-                await NavigationService.GoBackAsync();
+                if(!string.IsNullOrEmpty(source) && source.Equals("map"))
+                    await NavigationService.NavigateAsync("/AppliMenu/NavigationPage/MyMap");
+                else 
+                    await NavigationService.GoBackAsync();
             }
         }
 
@@ -91,6 +96,7 @@ namespace PoI.ViewModels
             base.OnNavigatingTo(parameters);
 
             var poi = parameters.GetValue<PointOfInterest>("poi");
+            source = parameters.GetValue<string>("source");
             PoI = poi;
             Name = poi.Name;
             Description = poi.Description;

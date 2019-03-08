@@ -10,16 +10,19 @@ using Plugin.Geolocator;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using PoI.Services;
+using Prism.Navigation;
 
 namespace PoI.ViewModels
 {
     
-    public class MyMapViewModel : BindableBase
+    public class MyMapViewModel : ViewModelBase
 	{
         private IPoIService poiservice;
         public Map Map { get; private set; }
-        public MyMapViewModel()
+        public MyMapViewModel(INavigationService nav, IPoIService poi)
+            :base(nav)
         {
+            poiservice = poi;
             Map = new Map(
              MapSpan.FromCenterAndRadius(
               new Position(),
@@ -58,19 +61,36 @@ namespace PoI.ViewModels
 
             Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromMiles(1)));
 
-             poiservice = new PoIService();
             var liste = poiservice.GetAllPoI();
 
-            var pin1 = new Pin
+            for(int i=0; i< liste.Count; i++)
             {
-                Type = PinType.Place,
-                Position = position,
-            Label = "MEILLEUR FAC DE LA GALAXY",
-                Address = "www.google.fr",
+                 //if (liste[i].pos != new Position())
+                {
+                    Pin pin = new Pin
+                    {
+                        Type = PinType.Place,
+                        Position = new Position(liste[i].latitude, liste[i].longitude),
+                        Label = liste[i].Name,
+                        Address = liste[i].Description,
+                        BindingContext = liste[i],
+                    };
 
-            };
+                    pin.Clicked += (sender, args) =>
+                    {
+                        var param = new NavigationParameters()
+                        {
+                            {"poi", pin.BindingContext },
+                            {"source", "map" }
+                        };
 
-            Map.Pins.Add(pin1);                                                       
+                        NavigationService.NavigateAsync("PoIDetail", param);
+                    };
+
+                    Map.Pins.Add(pin);
+                }
+            }
+                                                      
         }
     }
 }

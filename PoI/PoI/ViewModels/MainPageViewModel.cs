@@ -32,6 +32,8 @@ namespace PoI.ViewModels
             ProjectTitle = "Projet développement mobile";
             ProjectYear = "2018 - 2019";
             GroupName = "Klein / Tazen";
+
+
         }
     }
 }

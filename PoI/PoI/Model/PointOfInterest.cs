@@ -29,6 +29,7 @@ namespace PoI.Model
 
         public DateTime Date { get; set; }
 
-        public  Position pos { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
     }
 }

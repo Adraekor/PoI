@@ -16,13 +16,22 @@ namespace PoI.ViewModels
     public class NouveauViewModel : ViewModelBase
     {
         private const string BASE_IMAGE_SELECTER = "baseline_add_a_photo_24.xml";
-        private Position position = new Position();
+        
         private IPoIService _PoIService;
         private IPageDialogService _dialogService;
 
         public DelegateCommand DelegateTap { get; private set; }
 
         public DelegateCommand DelegateSave { get; private set; }
+
+                                                  
+
+        private Position _position;
+        public Position position
+        {
+            get { return _position; }
+            set { SetProperty(ref _position, value); }
+        }
 
         private string _imageFilePath;
         public string ImageFilePath
@@ -56,7 +65,7 @@ namespace PoI.ViewModels
             : base(navigationService)
         {
             Title = "Nouveau";
-
+            CallingGPS();
             ImageFilePath = BASE_IMAGE_SELECTER;
 
             _PoIService = PoIService;
@@ -93,7 +102,6 @@ namespace PoI.ViewModels
 
             if (!answer)
             {
-                CallingGPS();
                 CreatePoI();
             }
         }
@@ -103,12 +111,13 @@ namespace PoI.ViewModels
             {
                 Name = Name,
                 MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name,
-                Description = Description,
+                Description = Description,                                                  
                 MiniDesc = Description.Length > 10 ? Description.Substring(0, 10) + "..." : Description,
                 Tag = Tag,
                 MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag,
                 Date = DateTime.Now,
-                pos = position,
+                latitude = position.Latitude,
+                longitude = position.Longitude,
                 Image = ImageFilePath
             };
 
@@ -132,7 +141,6 @@ namespace PoI.ViewModels
             }
 
 
-            var test=3;
         }
 
         private async void ChoseMedia()
