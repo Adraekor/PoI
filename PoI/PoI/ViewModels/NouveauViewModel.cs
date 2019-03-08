@@ -7,9 +7,9 @@ using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using System;
-using Xamarin.Forms;
+using System.Linq;
 using Xamarin.Forms.Maps;
-using DependencyService = Prism.Services.DependencyService;
+
 
 namespace PoI.ViewModels
 {
@@ -31,6 +31,13 @@ namespace PoI.ViewModels
         {
             get { return _position; }
             set { SetProperty(ref _position, value); }
+        }
+
+        private string _adresse;
+        public string adresse
+        {
+            get { return _adresse; }
+            set { SetProperty(ref _adresse, value); }
         }
 
         private string _imageFilePath;
@@ -61,10 +68,14 @@ namespace PoI.ViewModels
             set { SetProperty(ref description, value); }
         }
 
+        Geocoder geoCoder;
+
         public NouveauViewModel(INavigationService navigationService, IPoIService PoIService, IPageDialogService dialogService)
             : base(navigationService)
         {
+
             Title = "Nouveau";
+            adresse = "Aucune Adresse";
             CallingGPS();
             ImageFilePath = BASE_IMAGE_SELECTER;
 
@@ -118,7 +129,8 @@ namespace PoI.ViewModels
                 Date = DateTime.Now,
                 latitude = position.Latitude,
                 longitude = position.Longitude,
-                Image = ImageFilePath
+                Image = ImageFilePath,
+                adresse = adresse
             };
 
             _PoIService.AddPoI(newPoI);
@@ -141,7 +153,14 @@ namespace PoI.ViewModels
             }
 
 
+            var add = await locator.GetAddressesForPositionAsync(new Plugin.Geolocator.Abstractions.Position(position.Latitude, position.Longitude));
+            var add2 = add.FirstOrDefault();   
+
+            adresse = add2.Thoroughfare+ " - " + add2.Locality+ " - "  + add2.CountryCode;
+
         }
+
+
 
         private async void ChoseMedia()
         {
