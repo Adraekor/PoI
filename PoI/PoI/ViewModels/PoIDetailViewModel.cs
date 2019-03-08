@@ -50,6 +50,13 @@ namespace PoI.ViewModels
             set { SetProperty(ref _tag, value); }
         }
 
+        private string _adresse;
+        public string adresse
+        {
+            get { return _adresse; }
+            set { SetProperty(ref _adresse, value); }
+        }
+
         private string _imageFilePath;
         public string ImageFilePath
         {
@@ -103,6 +110,7 @@ namespace PoI.ViewModels
             Name = poi.Name;
             Description = poi.Description;
             Tag = poi.Tag;
+            adresse = poi.adresse;
 
             ImageFilePath = poi.Image;
             Date = "Photo prise le : " + poi.Date.ToString(AppConstante.BasicDateFormat);

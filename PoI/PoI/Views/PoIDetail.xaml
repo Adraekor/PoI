@@ -33,6 +33,11 @@
                VerticalOptions="Start"
                Text="{ Binding Tag }" />
 
+        <Label FontSize="Medium"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Text="{ Binding adresse }" />
+
         <StackLayout
             Orientation="Horizontal"
             HorizontalOptions="EndAndExpand">

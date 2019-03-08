@@ -38,41 +38,18 @@ namespace PoI.ViewModels
 
         async void CallingGPS()
         {
-            var locator = CrossGeolocator.Current;
-            Position position;
-            locator.DesiredAccuracy = 120;
-            
-            if (!CrossGeolocator.IsSupported)
-                position = new Position();
-            if (!CrossGeolocator.Current.IsGeolocationEnabled)
-                position = new Position();
-            if (!CrossGeolocator.Current.IsGeolocationAvailable)
-                position = new Position();
-
-            try
-            {
-                var ex = await locator.GetPositionAsync(TimeSpan.FromSeconds(120), null, false);
-                position = new Position(ex.Latitude, ex.Longitude);
-            }
-            catch (Exception e)
-            {
-                position = new Position();
-            }
-
-            Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromMiles(1)));
-
             var liste = poiservice.GetAllPoI();
 
-            for(int i=0; i< liste.Count; i++)
+            for (int i = 0; i < liste.Count; i++)
             {
-                 //if (liste[i].pos != new Position())
+                if (liste[i].latitude != 0 && liste[i].longitude != 0)
                 {
                     Pin pin = new Pin
                     {
                         Type = PinType.Place,
                         Position = new Position(liste[i].latitude, liste[i].longitude),
                         Label = liste[i].Name,
-                        Address = liste[i].Description,
+                        Address = liste[i].adresse,
                         BindingContext = liste[i],
                     };
 
@@ -90,6 +67,34 @@ namespace PoI.ViewModels
                     Map.Pins.Add(pin);
                 }
             }
+
+            var locator = CrossGeolocator.Current;
+            Position position;
+            locator.DesiredAccuracy = 120;
+            
+            if (!CrossGeolocator.IsSupported)
+                position = new Position();
+            if (!CrossGeolocator.Current.IsGeolocationEnabled)
+                position = new Position();
+            if (!CrossGeolocator.Current.IsGeolocationAvailable)
+                position = new Position();
+
+            try
+            {
+                var ex = await locator.GetPositionAsync(TimeSpan.FromSeconds(10), null, false);
+                position = new Position(ex.Latitude, ex.Longitude);
+            }
+            catch (Exception e)
+            {
+                if (liste.Count > 0)
+                    position = new Position(liste.FirstOrDefault().latitude, liste.FirstOrDefault().longitude);
+                else
+                    position = new Position();
+            }
+
+            Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromMiles(1)));
+
+            
                                                       
         }
     }

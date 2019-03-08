@@ -28,6 +28,7 @@ namespace PoI.Model
         public string MiniTag { get; set; }
 
         public DateTime Date { get; set; }
+        public string adresse { get; set; }
 
         public double latitude { get; set; }
         public double longitude { get; set; }
