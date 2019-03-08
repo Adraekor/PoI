@@ -50,7 +50,8 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell
+                        Height="100">
                         <StackLayout
                             BackgroundColor="Beige"
                             Orientation="Horizontal"
@@ -65,15 +66,16 @@
                             <Label
                                 Text="{Binding MiniName}"
                                 TextColor="Green"
+                                WidthRequest="150"
                                 FontAttributes="Bold"
-                                FontSize="30"
-                                Margin="20,10,10,5"/>
+                                FontSize="30"/>
                             
                             <Label
                                 Text="{ Binding MiniTag }"
                                 FontAttributes="Bold"
-                                FontSize="20"
-                                Margin="20,10,10,5"/>
+                                WidthRequest="100"
+                                VerticalTextAlignment="Center"
+                                FontSize="20"/>
 
                             <Label
                                 Text="{Binding MiniDesc}"
@@ -82,10 +84,14 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand"
                                 HorizontalTextAlignment="End"/>
-                                         
-                          
 
-                          
+                            <Label 
+                                Text="{Binding DayDifference}"
+                                HorizontalOptions="Center"
+                                WidthRequest="150"
+                                VerticalTextAlignment="Center"/>
+
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

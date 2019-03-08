@@ -9,6 +9,8 @@ namespace PoI.ViewModels
 {
     public class PoIDetailViewModel : ViewModelBase
 	{
+
+
         private string source { get; set; }
 
         public DelegateCommand DelegateEdit { get; private set; }

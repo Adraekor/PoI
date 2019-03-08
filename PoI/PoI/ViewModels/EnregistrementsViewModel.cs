@@ -4,6 +4,7 @@ using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 
 namespace PoI.ViewModels

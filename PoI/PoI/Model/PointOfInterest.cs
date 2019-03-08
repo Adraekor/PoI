@@ -31,5 +31,17 @@ namespace PoI.Model
 
         public double latitude { get; set; }
         public double longitude { get; set; }
+
+        public string DayDifference
+        {
+            get
+            {
+                var dayDiff = (int)(DateTime.Now - Date).TotalDays;
+                if (dayDiff == 0)
+                    return "Il y a moins d'un jour";
+
+                return "Il y a " + dayDiff + " jours";
+            }
+        }
     }
 }
