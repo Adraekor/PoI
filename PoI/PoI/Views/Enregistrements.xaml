@@ -1,12 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PoI.Views.Enregistrements">
 
     <StackLayout>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="FillAndExpand">
+            <Entry 
+                Text="{ Binding Search }"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"/>
+
+            <Button
+                Command="{Binding DelegateSearch}"
+                HeightRequest="50"
+                WidthRequest="100"
+                Image="baseline_search_24.xml"/>
+
+            <Button
+                Command="{Binding DelegateCancel}"
+                HeightRequest="50"
+                WidthRequest="100"
+                Image="baseline_cancel_24.xml"/>
+
+            <ImageButton
+                Command="{Binding DelegateReverse}" 
+                Source="baseline_swap_vert_24.xml"
+                HeightRequest="50"
+                WidthRequest="50"
+                HorizontalOptions="End"/>
+        </StackLayout>
+
         <ListView
             x:Name="ListPoI"
             ItemsSource="{Binding PoIs}"
@@ -27,23 +56,29 @@
                             Orientation="Horizontal"
                             VerticalOptions="FillAndExpand">
 
+                            <Image 
+                                Source="{Binding Image}" 
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+
+
                             <Label
                                 Text="{Binding MiniName}"
                                 TextColor="Green"
                                 FontAttributes="Bold"
-                                FontSize="50"
+                                FontSize="30"
                                 Margin="20,10,10,5"/>
                             
                             <Label
                                 Text="{ Binding MiniTag }"
                                 FontAttributes="Bold"
-                                FontSize="30"
+                                FontSize="20"
                                 Margin="20,10,10,5"/>
 
                             <Label
                                 Text="{Binding MiniDesc}"
                                 TextColor="Red"
-                                FontSize="30"
+                                FontSize="20"
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand"
                                 HorizontalTextAlignment="End"/>
