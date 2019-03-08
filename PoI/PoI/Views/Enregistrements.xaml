@@ -50,47 +50,47 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell
-                        Height="100">
+                    <ViewCell>
                         <StackLayout
                             BackgroundColor="Beige"
                             Orientation="Horizontal"
-                            VerticalOptions="FillAndExpand">
+                            VerticalOptions="FillAndExpand"
+                            Margin="20, 5, 0, 5"
+                            HeightRequest="100">
 
                             <Image 
                                 Source="{Binding Image}" 
-                                WidthRequest="50"
-                                HeightRequest="50"/>
-
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"/>
 
                             <Label
                                 Text="{Binding MiniName}"
                                 TextColor="Green"
-                                WidthRequest="150"
+                                VerticalTextAlignment="Center"
+                                WidthRequest="75"
                                 FontAttributes="Bold"
-                                FontSize="30"/>
+                                FontSize="20"/>
                             
                             <Label
                                 Text="{ Binding MiniTag }"
                                 FontAttributes="Bold"
-                                WidthRequest="100"
+                                WidthRequest="75"
                                 VerticalTextAlignment="Center"
-                                FontSize="20"/>
+                                FontSize="15"/>
 
                             <Label
                                 Text="{Binding MiniDesc}"
                                 TextColor="Red"
-                                FontSize="20"
+                                FontSize="15"
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand"
                                 HorizontalTextAlignment="End"/>
 
                             <Label 
                                 Text="{Binding DayDifference}"
-                                HorizontalOptions="Center"
-                                WidthRequest="150"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
                                 VerticalTextAlignment="Center"/>
-
 
                         </StackLayout>
                     </ViewCell>
