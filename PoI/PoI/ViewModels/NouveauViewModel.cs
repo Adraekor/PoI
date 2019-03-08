@@ -1,20 +1,35 @@
-﻿using PoI.Model;
+﻿using Plugin.Geolocator;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using PoI.Model;
 using PoI.Services;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Maps;
+using DependencyService = Prism.Services.DependencyService;
 
 namespace PoI.ViewModels
 {
     public class NouveauViewModel : ViewModelBase
     {
+        private const string BASE_IMAGE_SELECTER = "baseline_add_a_photo_24.xml";
+        private Position position = new Position();
         private IPoIService _PoIService;
         private IPageDialogService _dialogService;
 
         public DelegateCommand DelegateTap { get; private set; }
 
         public DelegateCommand DelegateSave { get; private set; }
+
+        private string _imageFilePath;
+        public string ImageFilePath
+        {
+            get { return _imageFilePath; }
+            set { SetProperty(ref _imageFilePath, value); }
+        }
 
         private string _tag;
         public string Tag
@@ -42,19 +57,31 @@ namespace PoI.ViewModels
         {
             Title = "Nouveau";
 
+            ImageFilePath = BASE_IMAGE_SELECTER;
+
             _PoIService = PoIService;
             _dialogService = dialogService;
 
-            DelegateTap = new DelegateCommand(ChangeTappedValue);
-            DelegateSave = new DelegateCommand(SaveCurrentEntry, CanAddPoI).ObservesProperty(() => Name).ObservesProperty(() => Tag);
+            DelegateTap = new DelegateCommand(ChoseMedia);
+            DelegateSave = new DelegateCommand(SaveCurrentEntry, CanAddPoI)
+                            .ObservesProperty(() => Name)
+                            .ObservesProperty(() => Tag)
+                            .ObservesProperty(() => Description)
+                            .ObservesProperty(() => ImageFilePath);
         }
 
         private bool CanAddPoI()
         {
+            if (string.IsNullOrEmpty(ImageFilePath) || ImageFilePath.Equals(BASE_IMAGE_SELECTER))
+                return false; 
+
             if (string.IsNullOrEmpty(Name))
                 return false;
 
             if (string.IsNullOrEmpty(Tag))
+                return false;
+
+            if (string.IsNullOrEmpty(Description))
                 return false;
 
             return true;
@@ -66,29 +93,89 @@ namespace PoI.ViewModels
 
             if (!answer)
             {
-                var newPoI = new PointOfInterest
-                {
-                    Name = Name,
-                    MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name,
-                    Description = Description,
-                    Tag = Tag,
-                    MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag,
-                    Date = DateTime.Now
-                };
-
-                if (!string.IsNullOrEmpty(Description) && Description.Length > 10)
-                    newPoI.MiniDesc = Description.Substring(0, 10) + "...";
-                else
-                    newPoI.MiniDesc = Description;
-
-                 _PoIService.AddPoI(newPoI);
-                 await NavigationService.NavigateAsync("/AppliMenu/NavigationPage/Enregistrements");
+                CallingGPS();
+                CreatePoI();
             }
         }
 
-        void ChangeTappedValue()
+        private void CreatePoI() {
+            var newPoI = new PointOfInterest
+            {
+                Name = Name,
+                MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name,
+                Description = Description,
+                MiniDesc = Description.Length > 10 ? Description.Substring(0, 10) + "..." : Description,
+                Tag = Tag,
+                MiniTag = Tag.Length > 5 ? Tag.Substring(0, 5) + "..." : Tag,
+                Date = DateTime.Now,
+                pos = position,
+                Image = ImageFilePath
+            };
+
+            _PoIService.AddPoI(newPoI);
+            NavigationService.NavigateAsync("/AppliMenu/NavigationPage/Enregistrements");
+        }
+
+        async void CallingGPS()
         {
-            NavigationService.GoBackAsync();
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 120;
+
+            try
+            {
+                var ex = await locator.GetPositionAsync(TimeSpan.FromSeconds(120), null, false);
+                position = new Position(ex.Latitude, ex.Longitude);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            var test=3;
+        }
+
+        private async void ChoseMedia()
+        {
+            var answer = await _dialogService.DisplayActionSheetAsync("Ou se trouve votre media ?", "Annuler", null, new string[] { "Gallerie", "Appareil Photo" });
+            if(!string.IsNullOrEmpty(answer))
+            { 
+                if(answer.Equals("Gallerie"))
+                {
+                    var mediaOption = new PickMediaOptions()
+                    {
+                        PhotoSize = PhotoSize.Medium,
+                    };
+                    var stream = await CrossMedia.Current.PickPhotoAsync(mediaOption);
+
+                    if (stream != null)
+                        ImageFilePath = stream.Path;
+                }
+                else if(answer.Equals("Appareil Photo"))
+                {
+                    if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+                    {
+                        var photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions()
+                        {
+                            CompressionQuality = 50,
+                            Directory = "PoI",
+                            Name = $"PoI{ DateTime.Now }",
+                            PhotoSize = PhotoSize.Medium,
+                        });
+
+                        if (photo != null)
+                        {
+                            ImageFilePath = photo.Path;
+                        }
+                    }
+
+                    
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

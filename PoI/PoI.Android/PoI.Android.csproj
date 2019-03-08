@@ -64,6 +64,9 @@
     <PackageReference Include="Xam.Plugin.Geolocator">
       <Version>4.5.0.6</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
@@ -113,319 +116,532 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\sharp_3d_rotation_24.xml" />
+    <AndroidResource Include="Resources\drawable\sharp_3d_rotation_24.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sharp_3d_rotation_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_18.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_36.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_48.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sharp_3d_rotation_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sharp_3d_rotation_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sharp_3d_rotation_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sharp_3d_rotation_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_18.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_36.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_48.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_save_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_save_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_save_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_save_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\baseline_save_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_save_24.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_save_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\baseline_add_a_photo_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_add_a_photo_24.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_add_a_photo_white_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_18.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_add_a_photo_white_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_add_a_photo_white_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_add_a_photo_white_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_add_a_photo_white_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_edit_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_18.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_36.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_48.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_edit_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_edit_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_edit_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_edit_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\baseline_edit_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_edit_24.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\baseline_delete_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_delete_24.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_18.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_36.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_48.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_18.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_36.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_48.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_18.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_36.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_48.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

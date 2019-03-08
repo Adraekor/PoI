@@ -8,10 +8,18 @@
     <StackLayout HorizontalOptions="FillAndExpand" 
                  VerticalOptions="FillAndExpand">
 
-        <Image Source="baseline_add_a_photo_24.xml"
-                     HeightRequest="200"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Fill"/>
+        <StackLayout>
+            <Image Source="{ Binding ImageFilePath }"
+                         HeightRequest="200"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"/>
+
+            <Label Text="{Binding Date}"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large">
+            </Label>
+
+        </StackLayout>
 
         <Entry FontSize="Medium"
                Placeholder="Name" 

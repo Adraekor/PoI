@@ -8,11 +8,16 @@
     <StackLayout HorizontalOptions="FillAndExpand" 
                  VerticalOptions="FillAndExpand">
 
-        <ImageButton Source="baseline_add_a_photo_24.xml"
-                     HeightRequest="200"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Fill"
-                     Command="{ Binding DelegateTap }" />
+        <StackLayout>
+            <Image Source="{ Binding ImageFilePath }"
+                         HeightRequest="200"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"/>
+            <Label Text="{Binding Date}"
+                       HorizontalTextAlignment="Center"
+                   FontSize="Large">
+            </Label>
+        </StackLayout>
 
         <Label FontSize="Medium"
                HorizontalOptions="FillAndExpand"
@@ -39,6 +44,8 @@
                              HorizontalOptions="End"
                              Margin="20" 
                              Command="{ Binding DelegateDelete }"/>
+
+
             </StackLayout>
             
             <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">

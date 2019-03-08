@@ -7,8 +7,8 @@
 
     <StackLayout HorizontalOptions="FillAndExpand" 
                  VerticalOptions="FillAndExpand">
-        
-        <ImageButton Source="baseline_add_a_photo_24.xml"
+
+        <ImageButton Source="{ Binding ImageFilePath }"
                      HeightRequest="200"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Fill"

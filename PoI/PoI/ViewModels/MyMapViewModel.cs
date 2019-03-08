@@ -9,29 +9,27 @@ using System.Collections.ObjectModel;
 using Plugin.Geolocator;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using PoI.Services;
 
 namespace PoI.ViewModels
 {
     
     public class MyMapViewModel : BindableBase
 	{
+        private IPoIService poiservice;
         public Map Map { get; private set; }
-        static Position test;
         public MyMapViewModel()
         {
             Map = new Map(
-                MapSpan.FromCenterAndRadius(
-                new Position(49.094928, 6.229883),
-                Distance.FromMiles(0.3)))
+             MapSpan.FromCenterAndRadius(
+              new Position(),
+              Distance.FromMiles(0.3)))
             {
-                //IsShowingUser = true,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
-            //MapSpan.FromCenterAndRadius(new Position(49.094928, 6.229883), Distance.FromMiles(0.5))){IsShowingUser = true,VerticalOptions = LayoutOptions.FillAndExpand};
 
 
-             CallingGPS();
-            
+            CallingGPS();          
         }
 
 
@@ -58,13 +56,14 @@ namespace PoI.ViewModels
                 position = new Position();
             }
 
-            test = new Position(  position.Latitude,position.Longitude);
+            Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromMiles(1)));
+
+             poiservice = new PoIService();
+            var liste = poiservice.GetAllPoI();
 
             var pin1 = new Pin
             {
                 Type = PinType.Place,
-                //Position = position1,
-                //Position = new Position(49.094928, 6.229883),//position.Latitude, position.Longitude),
                 Position = position,
             Label = "MEILLEUR FAC DE LA GALAXY",
                 Address = "www.google.fr",

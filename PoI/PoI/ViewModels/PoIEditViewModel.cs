@@ -16,6 +16,13 @@ namespace PoI.ViewModels
 
         private IPageDialogService _dialogService;
 
+        private string _date;
+        public string Date
+        {
+            get { return _date; }
+            set { SetProperty(ref _date, value); }
+        }
+
         private string _name;
         public string Name
         {
@@ -37,19 +44,29 @@ namespace PoI.ViewModels
             set { SetProperty(ref _tag, value); }
         }
 
+        private string _imageFilePath;
+        public string ImageFilePath
+        {
+            get { return _imageFilePath; }
+            set { SetProperty(ref _imageFilePath, value); }
+        }
+
         public PoIEditViewModel(INavigationService navigationService, IPoIService poiService, IPageDialogService pageDialog)
             : base(navigationService)
         {
             PoIService = poiService;
             _dialogService = pageDialog;
-            DelegateSave = new DelegateCommand(UpdateAndExit, CanEditPoI).ObservesProperty(() => Name).ObservesProperty(() => Tag);
+            DelegateSave = new DelegateCommand(UpdateAndExit, CanEditPoI)
+                .ObservesProperty(() => Name)
+                .ObservesProperty(() => Tag)
+                .ObservesProperty(() => Description);
         }
 
         public async void UpdateAndExit()
         {
-            var answer = await _dialogService.DisplayAlertAsync("Modification", "Êtes vous sûr de vouloir modifier ce PoI", "Non", "Oui");
+            var answer = await _dialogService.DisplayAlertAsync("Modification", "Êtes vous sûr de vouloir modifier ce PoI", "Oui", "Non");
 
-            if (!answer)
+            if (answer)
             {
                 PoI.Name = Name;
                 PoI.MiniName = Name.Length > 5 ? Name.Substring(0, 5) + "..." : Name;
@@ -82,6 +99,9 @@ namespace PoI.ViewModels
             if (string.IsNullOrEmpty(Tag))
                 return false;
 
+            if (string.IsNullOrEmpty(Description))
+                return false;
+
             return true;
         }
 
@@ -94,6 +114,8 @@ namespace PoI.ViewModels
             Name = poi.Name;
             Description = poi.Description;
             Tag = poi.Tag;
+            ImageFilePath = poi.Image;
+            Date = "Photo prise le : " + poi.Date.ToString(AppConstante.BasicDateFormat);
         }
     }
 }
